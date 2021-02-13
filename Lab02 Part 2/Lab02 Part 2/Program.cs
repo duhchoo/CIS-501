@@ -4,6 +4,7 @@ namespace Lab02
 {
     public class Program
     {
+
         static void Main(string[] args)
         {
             Manager manager = new Manager();
@@ -11,6 +12,7 @@ namespace Lab02
             Client client = new Client(manager);
 
             client.Work();
+
         }
     }
 }

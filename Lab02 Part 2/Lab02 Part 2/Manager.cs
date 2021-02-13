@@ -9,7 +9,7 @@ namespace Lab02
         private List<Helper> Active = new List<Helper>();
 
         public void Remove(Helper helper)
-        { 
+        {
             Active.Remove(helper);
 
             Console.WriteLine("MANAGER: Removing Helper from Active List.");
@@ -29,5 +29,8 @@ namespace Lab02
 
             return helper;
         }
+
+
+
     }
 }

@@ -7,11 +7,16 @@ namespace Lab02
 {
     public class Helper
     {
-        private Manager myManager;
+        private Manager myManager = new Manager();
+
+        public delegate void RemoveMethod(Helper helper);
+
+        RemoveMethod handler = null;
 
         public Helper(Manager m)
         {
             myManager = m;
+            handler = myManager.Remove;
         }
 
         public void DoWork()
@@ -23,7 +28,7 @@ namespace Lab02
         {
             Console.WriteLine("HELPER: Done.");
 
-            myManager.Remove(this);
+            handler(this);
         }
 
 

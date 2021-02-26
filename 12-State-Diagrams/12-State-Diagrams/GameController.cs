@@ -32,7 +32,7 @@ namespace State_Diagrams
                         break;
                     }
                 case Status.HaveMN:
-                    {  // middle of game: s is user's second int guess
+                    {  // middle of game: s is user's second int guess 
                         int p;
                         bool intOK = int.TryParse(s, out p);
                         if (m + n + p == 10) { state = Status.Win; }

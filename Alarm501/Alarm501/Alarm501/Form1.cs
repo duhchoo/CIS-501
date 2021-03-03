@@ -12,6 +12,15 @@ using System.Windows.Forms;
 
 namespace Alarm501
 {
+    public enum AlarmSounds
+    {
+        Radar,
+        Beacon,
+        Chimes,
+        Circuit,
+        Reflection
+    }
+
     public partial class Form1 : Form
     {
         // Setting up Timer
@@ -124,7 +133,7 @@ namespace Alarm501
 
                 string stat = "OFF";
                 if (addForm.newAlarm.IsOn) { stat = "ON"; }
-                Console.WriteLine(addForm.newAlarm.Time.ToString() + " " + stat);
+                Console.WriteLine(addForm.newAlarm.Time.ToString() + " " + stat + " (" + addForm.newAlarm.Sound.ToString() + ")");
 
             }
             if (uxAlarmList.Items.Count == 5)
@@ -149,7 +158,7 @@ namespace Alarm501
             }
 
             Alarm tempAlarm = new Alarm();
-            tempAlarm.Time = DateTime.Now.AddSeconds(3);
+            tempAlarm.Time = DateTime.Now.AddMinutes(oldAlarm.SnoozeTime);
             tempAlarm.IsOn = oldAlarm.IsOn;
             uxAlarmList.Items[targetAlarmIndex] = tempAlarm;
 

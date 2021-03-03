@@ -13,6 +13,7 @@ namespace Alarm501
     public partial class AddForm : Form
     {
         public DateTime newTime;
+        public int newSnooze;
 
         public Alarm newAlarm = null;
 
@@ -20,11 +21,6 @@ namespace Alarm501
         public AddForm()
         {
             InitializeComponent();
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void uxDateTimePicker_ValueChanged(object sender, EventArgs e)
@@ -44,7 +40,32 @@ namespace Alarm501
             newAlarm.Time = newTime;
             newAlarm.IsOn = uxOnBox.Checked;
 
+            switch (uxSoundPicker.SelectedItem)
+            {
+                case "Radar":
+                    newAlarm.Sound = AlarmSounds.Radar;
+                    break;
+                case "Beacon":
+                    newAlarm.Sound = AlarmSounds.Beacon;
+                    break;
+                case "Chimes":
+                    newAlarm.Sound = AlarmSounds.Chimes;
+                    break;
+                case "Circuit":
+                    newAlarm.Sound = AlarmSounds.Circuit;
+                    break;
+                case "Reflection":
+                    newAlarm.Sound = AlarmSounds.Reflection;
+                    break;
+                case "- Choose -":
+                    newAlarm.Sound = AlarmSounds.Radar;
+                    break;
+            }
+
+            newAlarm.SnoozeTime = Convert.ToInt32(uxSnoozePicker.Value);
+
             this.Close();
         }
+
     }
 }

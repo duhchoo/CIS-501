@@ -7,10 +7,14 @@ using System.Threading.Tasks;
 
 namespace Alarm501
 {
+
+
     public class Alarm
     {
         private DateTime _time;
         private bool _isOn = false;
+        private int _snoozeTime = 0;
+        private AlarmSounds _sound;
 
         public DateTime Time
         {
@@ -40,13 +44,37 @@ namespace Alarm501
             }
         }
         
+        public int SnoozeTime
+        {
+            get
+            {
+                return _snoozeTime;
+            }
+            set
+            {
+                _snoozeTime = value;
+            }
+        }
+
+        public AlarmSounds Sound
+        {
+            get
+            {
+                return _sound;
+            }
+            set
+            {
+                _sound = value;
+            }
+        }
+
         public override string ToString()
         {
             string bingo = "OFF";
             if (_isOn) {
                 bingo = "ON";
             }
-            return "   " + _time.ToString("hh") + ":" + _time.ToString("mm") + " " + _time.ToString("tt") + "    " + bingo;
+            return "   " + _time.ToString("hh") + ":" + _time.ToString("mm") + " " + _time.ToString("tt") + "    " + bingo + " (" + Sound.ToString() + ")";
         }
 
     }

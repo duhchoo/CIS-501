@@ -97,12 +97,11 @@
             // 
             // uxAlarmList
             // 
-            this.uxAlarmList.Font = new System.Drawing.Font("OCR A Extended", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxAlarmList.Font = new System.Drawing.Font("OCR A Extended", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uxAlarmList.FormattingEnabled = true;
-            this.uxAlarmList.ItemHeight = 20;
             this.uxAlarmList.Location = new System.Drawing.Point(12, 60);
             this.uxAlarmList.Name = "uxAlarmList";
-            this.uxAlarmList.Size = new System.Drawing.Size(237, 204);
+            this.uxAlarmList.Size = new System.Drawing.Size(237, 199);
             this.uxAlarmList.TabIndex = 6;
             this.uxAlarmList.SelectedIndexChanged += new System.EventHandler(this.uxAlarmList_SelectedIndexChanged);
             // 

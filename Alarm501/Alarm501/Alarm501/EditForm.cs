@@ -13,7 +13,7 @@ namespace Alarm501
     public partial class EditForm : Form
     {
 
-        public Alarm _alarm;
+        public Alarm _alarm = new Alarm();
 
         public EditForm(object alarm2Edit)
         {

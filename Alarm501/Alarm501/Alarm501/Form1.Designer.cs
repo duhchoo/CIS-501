@@ -87,11 +87,11 @@
             // uxAlarmStatus
             // 
             this.uxAlarmStatus.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.uxAlarmStatus.Font = new System.Drawing.Font("OCR A Extended", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxAlarmStatus.Font = new System.Drawing.Font("OCR A Extended", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uxAlarmStatus.Location = new System.Drawing.Point(12, 284);
             this.uxAlarmStatus.Name = "uxAlarmStatus";
             this.uxAlarmStatus.ReadOnly = true;
-            this.uxAlarmStatus.Size = new System.Drawing.Size(237, 20);
+            this.uxAlarmStatus.Size = new System.Drawing.Size(237, 13);
             this.uxAlarmStatus.TabIndex = 5;
             this.uxAlarmStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -103,7 +103,6 @@
             this.uxAlarmList.Name = "uxAlarmList";
             this.uxAlarmList.Size = new System.Drawing.Size(237, 199);
             this.uxAlarmList.TabIndex = 6;
-            this.uxAlarmList.SelectedIndexChanged += new System.EventHandler(this.uxAlarmList_SelectedIndexChanged);
             // 
             // Form1
             // 

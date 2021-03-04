@@ -6,6 +6,9 @@ using System.Windows.Forms;
 
 namespace Alarm501
 {
+    public delegate void ControlReference(Controller controller);
+
+
     static class Program
     {
         /// <summary>
@@ -16,7 +19,12 @@ namespace Alarm501
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            Form1 view = new Form1();
+            Controller controller = new Controller(view);
+            view.ControllerSet(controller);
+
+            Application.Run(view);
         }
     }
 }

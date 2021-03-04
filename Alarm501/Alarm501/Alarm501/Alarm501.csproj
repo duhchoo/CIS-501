@@ -53,6 +53,7 @@
       <DependentUpon>AddForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Alarm.cs" />
+    <Compile Include="Controller.cs" />
     <Compile Include="EditForm.cs">
       <SubType>Form</SubType>
     </Compile>

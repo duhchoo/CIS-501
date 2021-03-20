@@ -15,8 +15,8 @@ namespace SquareLSP
 
     public class Rectangle : Shape
     {
-        public virtual int Height { get; set; }
-        public virtual int Width { get; set; }
+        public override int Height { get; set; }
+        public override int Width { get; set; }
 
         public override void Draw()
         {

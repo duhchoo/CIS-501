@@ -32,10 +32,13 @@ namespace Websocket_Server
             // Retrieve message from client
             string msg = e.Data;
 
-            MessageHistory.Add(msg);
+            DateTime time = DateTime.Now;
+
+
+            MessageHistory.Add(msg + " " + time.ToString("HHmm"));
 
             // Broadcast message to all clients
-            Sessions.Broadcast(msg);
+            Sessions.Broadcast(msg + " " + time.ToString("HHmm");
         }
     }
 }

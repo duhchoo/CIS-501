@@ -21,16 +21,16 @@ namespace Storage_Object_Diagrams_2
 
             // Uncomment this to see de/serialization of c, d, and e
             // serializes values of c, d, and e as mString
-            /*
+
             Dictionary<string, Object> m = new Dictionary<string, Object>();
             m["c"] = c;
             m["d"] = d;
             m["e"] = e;
             JsonSerializerSettings settings = new JsonSerializerSettings
-                    {
-                        ContractResolver = new CustomJsonContractResolver(),
-                        PreserveReferencesHandling = PreserveReferencesHandling.Objects
-                    };
+            {
+                ContractResolver = new CustomJsonContractResolver(),
+                PreserveReferencesHandling = PreserveReferencesHandling.Objects
+            };
             string mString = JsonConvert.SerializeObject(
                     m,
                     Formatting.Indented,
@@ -46,7 +46,7 @@ namespace Storage_Object_Diagrams_2
                     settings);
             Console.WriteLine(m2String);
             Console.WriteLine(mString == m2String);
-            */
+
 
             Console.ReadLine();   //*** insert break point at beginning of this line   
         }

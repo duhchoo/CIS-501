@@ -36,6 +36,14 @@ namespace Storage_Object_Diagrams_Perms
                     else
                     {
                         foreach (string p in thePerms) { Console.Write(p + " "); }
+                        Console.WriteLine();
+                        JsonSerializerSettings settings = new JsonSerializerSettings
+                        {
+                            ContractResolver = new CustomJsonContractResolver(),
+                            PreserveReferencesHandling = PreserveReferencesHandling.Objects
+                        };
+                        string dstring = JsonConvert.SerializeObject(d, Formatting.Indented, settings);
+                        Console.WriteLine(dstring);
                     }
                 }
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace DesignPatterns_Factories_Iterators
 {
@@ -10,6 +11,7 @@ namespace DesignPatterns_Factories_Iterators
     {
         private Mode status;       // the current mode of use of the file
         private TextFile thefile;  // the data structure controlled
+        private int count;
 
         public FileController(TextFile f)
         {
@@ -24,10 +26,11 @@ namespace DesignPatterns_Factories_Iterators
             lock (this)
             {
                 FileReader ans = null;
-                if (status == Mode.Available)
+                if (status == Mode.Available || status == Mode.Read)
                 {
                     status = Mode.Read;
                     ans = thefile.makeReader(this.closeRead);
+                    count++;
                 }
                 return ans;
             }
@@ -38,7 +41,16 @@ namespace DesignPatterns_Factories_Iterators
         {
             lock (this)
             {
-                status = Mode.Available;
+                if (count > 1)
+                {
+                    count--;
+                }
+                else if (count == 1)
+                {
+                    status = Mode.Available;
+                    count = 0;
+                }
+                
             }
         }
 
